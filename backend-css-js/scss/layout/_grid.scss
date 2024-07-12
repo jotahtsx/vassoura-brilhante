@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+@use "breakpoints" as *;
+
+/** LAYOUT E GRIDS **/
+.vsb-container, 
+    [class*=vsb-container-] {
+    width: var(--container-default);
+    margin: 0 auto;
+}
+
+// Criando alguns containers baseados no seu tamanho de tela
+@each $size, $value in $containers {
+    .vsb-container-#{$size} {
+        @include respond($size) {
+            max-width: $value;
+        }
+    }
+}
+
+//Rows e Columns
+.vsb-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$default-gutter;
+    margin-right: -$default-gutter;
+    > [class*=vsb-flex-] {
+        width: 100%;
+        max-width: 100%;
+        padding-right: $default-gutter;
+        padding-left: $default-gutter;
+    }
+}
+

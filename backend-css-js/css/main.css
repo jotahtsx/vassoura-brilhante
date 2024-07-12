@@ -425,4 +425,48 @@ h5, .vsb-h5 {
 h6, .vsb-h6 {
   font-size: var(--heading-6);
 }
+
+/** LAYOUT E GRIDS **/
+.vsb-container,
+[class*=vsb-container-] {
+  width: var(--container-default);
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 553px) {
+  .vsb-container-sm {
+    max-width: var(--container-sm);
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .vsb-container-md {
+    max-width: var(--container-md);
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .vsb-container-lg {
+    max-width: var(--container-lg);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .vsb-container-xl {
+    max-width: var(--container-xl);
+  }
+}
+
+.vsb-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+.vsb-row > [class*=vsb-flex-] {
+  width: 100%;
+  max-width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
 /*# sourceMappingURL=main.css.map */
