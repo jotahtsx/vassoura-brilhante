@@ -1,4 +1,6 @@
 @use "../abstracts/variables";
 
 //Base
+@forward "../base/normalize";
 @forward "../base/base";
+@forward "../base/typography";

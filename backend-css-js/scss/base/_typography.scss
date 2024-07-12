@@ -1,0 +1,14 @@
+@use "../abstracts/variables" as *;
+
+h1, .vsb-h1,
+h2, .vsb-h2,
+h3, .vsb-h3,
+h4, .vsb-h4,
+h5, .vsb-h5,
+h6, .vsb-h6 {
+    font-family: var(--heading-font-family);
+    color: inherit;
+    font-weight: var(--font-weight-bold);
+    line-height: var(--heading-line-height);
+    margin: 0;
+}
