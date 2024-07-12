@@ -12,3 +12,9 @@ h6, .vsb-h6 {
     line-height: var(--heading-line-height);
     margin: 0;
 }
+
+@for $i from 1 through 6 {
+    h#{$i}, .vsb-h#{$i} {
+        font-size: var(--heading-#{$i});
+    }
+}
