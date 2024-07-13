@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "variables" as *;
+@use "../layout/breakpoints" as *;
+
+//Criando grid e colunas
+@mixin grid($total, $number) {
+    flex: 0 0 calc(100% / (#{$total} / #{$number}));
+    max-width: calc(100% / (#{$total} / #{$number}));
+}
