@@ -34,7 +34,7 @@
     }
 
     @for $i from 1 through $total-cols {
-        .vsb-flex-#{$break}-#{$i} {
+        .vsb-flex-#{$i} {
             @include grid($total-cols, $i);
         }
     }
@@ -42,11 +42,13 @@
     @each $break, $value in $containers {
         @include respond(#{$break}) {
             @for $i from 1 through $total-cols {
-                .vsb-flex-#{$break}-#{$i} {
-                    @include grid($total-cols, $i);
-                }
+                
             }
         }
     }
 }
 
+//Offsets, Columns - Não responsivo
+@include offset-grid($total-cols, false);
+//Offsets, Columns - Responsivo
+@include offset-grid($total-cols, true);
