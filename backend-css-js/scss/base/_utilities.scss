@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../layout/breakpoints" as *;
 @use "utility-api" as *;
 
 @each $block, $children in $vsb-utilities {
@@ -22,10 +23,10 @@
                         #{$child} {
                             @if type-of($property) == list {
                                 @each $curr-property in $property {
-                                    #{$curr-property}: #{$value} if($important, !important, "");
+                                    #{$curr-property}: #{$value} if($important, !important, unquote(""));
                                 }
                             }@else {
-                                #{$property}: #{$value} if($important, !important, "");
+                                #{$property}: #{$value} if($important, !important, unquote(""));
                             }
                         }
                     } @else {
@@ -35,13 +36,52 @@
 
                         @if type-of($property) == list {
                             @each $curr-property in $property {
-                                #{$curr-property}: #{$value} if($important, !important, "");
+                                #{$curr-property}: #{$value} if($important, !important, unquote(""));
                             }
                         }@else {
-                            #{$property}: #{$value} if($important, !important, "");
+                            #{$property}: #{$value} if($important, !important, unquote(""));
                         }
                        }
                     }  
+                }
+            }
+
+            @if $responsive {
+                //Criando o loop sobre breakpoints
+                @each $break, $value in $breakpoints-up {
+                    @include respond(#{$break}) {
+                        //Loop através do mapa original dos breakpoints
+                        @each $child, $value in $values {
+                            @if $value != null {
+            
+                                @if $base-class == null {
+                                    //Criando o seletor
+                                    #{$child} {
+                                        @if type-of($property) == list {
+                                            @each $curr-property in $property {
+                                                #{$curr-property}: #{$value} if($important, !important, unquote(""));
+                                            }
+                                        }@else {
+                                            #{$property}: #{$value} if($important, !important, unquote(""));
+                                        }
+                                    }
+                                } @else {
+                                   //Selecionando as classes
+                                   .#{$base-class}#{$child}#{$suffix}-#{$break} {
+            
+            
+                                    @if type-of($property) == list {
+                                        @each $curr-property in $property {
+                                            #{$curr-property}: #{$value} if($important, !important, unquote(""));
+                                        }
+                                    } @else {
+                                        #{$property}: #{$value} if($important, !important, unquote(""));
+                                    }
+                                   }
+                                }  
+                            }
+                        }
+                    }
                 }
             }
         }

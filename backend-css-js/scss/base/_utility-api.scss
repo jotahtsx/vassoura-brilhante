@@ -7,7 +7,6 @@ $vsb-utilities: (
         class: vsb-overflow-,
         property: overflow,
         responsive: false,
-        suffix: null,
         values: (
             auto: auto,
             visible: visible,
@@ -17,7 +16,6 @@ $vsb-utilities: (
     "margin-top-bottom": (
         class: vsb-mg-y-,
         property: margin-top margin-bottom,
-        important: false,
         values: map.merge($spacings, $spacings),
     ),
 );

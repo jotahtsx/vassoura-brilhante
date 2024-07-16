@@ -44,3 +44,60 @@
         }
     }
 }
+
+@mixin loop-list-property($property, $value, $important) {
+    @if type-of($property) == list {
+        @each $curr-property in $property {
+            #{$curr-property}: #{$value} if($important, !important, unquote(""));
+        }
+    } @else {
+        #{$property}: #{$value} if($important, !important, unquote(""));
+    }
+}
+
+//Loop simples (or 1-dimensão dos mapas)
+@mixin loop-through-map($map, $base-class: "vsb-", $suffix: null, $property: null, $responsive: true, $important: true) {
+    @each $child, $value in $map {
+        @if $value != null {
+
+            @if $base-class == null {
+                //Criando o seletor
+                #{$child} {
+                    @include loop-list-property($property, $value, $important);
+                }
+            } @else {
+               //Selecionando as classes
+               .#{$base-class}#{$child}#{$suffix} {
+                @include loop-list-property($property, $value, $important);
+               }
+            }  
+        }
+    }
+
+    @if $responsive {
+        //Criando o loop sobre breakpoints
+        @each $break, $value in $breakpoints-up {
+            @include respond(#{$break}) {
+                //Loop através do mapa original dos breakpoints
+                @each $child, $value in $map {
+                    @each $child, $value in $map {
+                        @if $value != null {
+                
+                            @if $base-class == null {
+                                //Criando o seletor
+                                #{$child} {
+                                    @include loop-list-property($property, $value, $important);
+                                }
+                            } @else {
+                               //Selecionando as classes
+                               .#{$base-class}#{$child}#{$suffix}-#{$break} {
+                                @include loop-list-property($property, $value, $important);
+                               }
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
