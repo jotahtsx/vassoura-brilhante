@@ -19,16 +19,3 @@ h6, .vsb-h6 {
         font-size: var(--heading-#{$i});
     }
 }
-
-$headings: (
-    h1: 3rem,
-    h2: 2.5rem,
-    h3: 2rem,
-    h4: 1.8rem,
-    h5: 1.6rem,
-    h6: 1.4rem,
-);
-
-$property: font-size;
-
-@include loop-through-map($headings, $property: $property);

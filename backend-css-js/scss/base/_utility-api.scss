@@ -2,20 +2,263 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+/* Utilities */
+
 $vsb-utilities: (
-    "overflow": (
-        class: vsb-overflow-,
-        property: overflow,
-        responsive: false,
-        values: (
-            auto: auto,
-            visible: visible,
-            hidden: hidden
-        )
+  // Overflow
+  "overflow":
+    (
+      class: vsb-overflow-,
+      property: overflow,
+      values: (
+        auto: auto,
+        visible: visible,
+        hidden: hidden,
+      ),
     ),
-    "margin-top-bottom": (
-        class: vsb-mg-y-,
-        property: margin-top margin-bottom,
-        values: map.merge($spacings, $spacings),
+  // Text alignment
+  "text-alignment":
+    (
+      property: text-align,
+      class: vsb-ta-,
+      values: (
+        left: left,
+        center: center,
+        right: right,
+        justify: justify,
+      ),
     ),
+  // Text transform
+  "text-transform":
+    (
+      property: text-transform,
+      class: vsb-tt-,
+      responsive: false,
+      values: (
+        none: none,
+        lowercase: lowercase,
+        capitalize: capitalize,
+        uppercase: uppercase,
+      ),
+    ),
+  // Text style
+  "text-style":
+    (
+      property: font-style,
+      class: vsb-ts-,
+      responsive: false,
+      values: (
+        normal: normal,
+        italic: italic,
+      ),
+    ),
+  // Text decoration
+  "text-decoration":
+    (
+      property: text-decoration,
+      class: vsb-td-,
+      responsive: false,
+      values: (
+        underline: underline,
+        line-through: line-through,
+      ),
+    ),
+  // Font sizes
+  "font-sizes":
+    (
+      property: font-size,
+      class: vsb-fs-,
+      values: map.merge($font-sizes, $font-sizes),
+    ),
+  // Font weights
+  "font-weights":
+    (
+      property: font-weight,
+      responsive: false,
+      class: vsb-fw-,
+      values: map.merge($font-weights, $font-weights),
+    ),
+  // Flexbox and Block
+  "flexbox-block":
+    (
+      property: display,
+      class: vsb-d-,
+      values: (
+        block: block,
+        in-block: inline-block,
+        flex: flex,
+        in-flex: inline-flex,
+        none: none,
+      ),
+    ),
+  // Flexbox direction
+  "flexbox-direction":
+    (
+      property: flex-direction,
+      class: vsb-fd-,
+      values: (
+        row: row,
+        row-reverse: row-reverse,
+        column: column,
+        column-reverse: column-reverse,
+      ),
+    ),
+  // Flexbox - Justify content
+  "flexbox-justify":
+    (
+      property: justify-content,
+      class: vsb-justify-,
+      values: (
+        stretch: stretch,
+        start: flex-start,
+        end: flex-end,
+        evenly: space-evenly,
+        around: space-around,
+        between: space-between,
+        center: center,
+      ),
+    ),
+  // Flexbox - Align items
+  "flexbox-align":
+    (
+      property: align-items,
+      class: vsb-align-,
+      values: (
+        stretch: stretch,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+      ),
+    ),
+  // Flexbox - Ordering
+  "flexbox-order":
+    (
+      property: order,
+      class: vsb-order-,
+      values: (
+        n-1: -1,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+      ),
+    ),
+  // Flexbox - Basis
+  "flexbox-basis":
+    (
+      property: flex,
+      class: vsb-flex-b-,
+      values: (
+        1: 1,
+        2: 2,
+      ),
+    ),
+  // Flexbox - Basis - Auto
+  "flexbox-basis-auto":
+    (
+      property: flex,
+      class: vsb-flex-,
+      values: (
+        auto: 0 0 auto,
+      ),
+    ),
+  // Margin - All around
+  "margin":
+    (
+      property: margin,
+      class: vsb-mg-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Margin - Top
+  "margin-top":
+    (
+      property: margin-top,
+      class: vsb-mg-t-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Margin - Right
+  "margin-right":
+    (
+      property: margin-right,
+      class: vsb-mg-r-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Margin - Bottom
+  "margin-bottom":
+    (
+      property: margin-bottom,
+      class: vsb-mg-b-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Margin - Left
+  "margin-left":
+    (
+      property: margin-left,
+      class: vsb-mg-l-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Margin - Left and Right
+  "margin-left-right":
+    (
+      property: margin-left margin-right,
+      class: vsb-mg-x-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Margin - Top and Bottom
+  "margin-top-bottom":
+    (
+      property: margin-top margin-bottom,
+      class: vsb-mg-y-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - All around
+  "padding":
+    (
+      property: padding,
+      class: vsb-pd-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - Top
+  "padding-top":
+    (
+      property: padding-top,
+      class: vsb-pd-t-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - Right
+  "padding-right":
+    (
+      property: padding-right,
+      class: vsb-pd-r-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - Bottom
+  "padding-bottom":
+    (
+      property: padding-bottom,
+      class: vsb-pd-b-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - Left
+  "padding-left":
+    (
+      property: padding-left,
+      class: vsb-pd-l-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - Left and Right
+  "padding-left-right":
+    (
+      property: padding-left padding-right,
+      class: vsb-pd-x-,
+      values: map.merge($spacings, $spacings),
+    ),
+  // Padding - Top and Bottom
+  "padding-top-bottom":
+    (
+      property: padding-top padding-bottom,
+      class: vsb-pd-y-,
+      values: map.merge($spacings, $spacings),
+    )
 );

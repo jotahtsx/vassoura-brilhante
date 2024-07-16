@@ -2,6 +2,32 @@
 @use "variables" as *;
 @use "../layout/breakpoints" as *;
 
+@mixin customScrollbar($widh: 0.5rem, $height: 0.5rem, $bg-color: var(--vsb-gray-600-clr)) {
+    //Firefox
+    scrollbar-width: thin;
+    scrollbar-color: $bg-color transparent;
+
+    //Chrome e outros
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 0.2rem transparent;
+        background: transparent;
+        margin: 1.1rem;
+    }
+
+    &::-webkit-scrollbar {
+        height: $height;
+        width: $widh;
+        background: $bg-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6rem;
+        width: $widh;
+        background: $bg-color;
+    }
+}
+
+
 //Criando grid e colunas
 @mixin grid($total, $number) {
     flex: 0 0 calc(100% / (#{$total} / #{$number}));
@@ -100,4 +126,26 @@
             }
         }
     }
+
+    @if $responsive {
+    }
 }
+
+@mixin loop-deep-map($deep-map) {
+    @each $block, $children in $deep-map {
+        @each $subblock, $values in $children {
+            $base-class: map.get($children, class);
+            $suffix: map.get($children, suffix);
+            $property: map.get($children, property);
+            $responsive: if(map-has-key($children, responsive), map.get($children, responsive),
+            true);
+            $important: if(map-has-key($children, important), map.get($children, important),
+            true);
+    
+            @if type-of($values) == map and $values != null and $base-class != null {
+                @include loop-through-map($values, $base-class, $suffix, $property, $responsive, $important);
+            }
+        }
+    }
+}
+
