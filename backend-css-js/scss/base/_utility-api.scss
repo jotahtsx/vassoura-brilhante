@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+$vsb-utilities: (
+    "overflow": (
+        class: vsb-overflow-,
+        property: overflow,
+        responsive: false,
+        suffix: null,
+        values: (
+            auto: auto,
+            visible: visible,
+            hidden: hidden
+        )
+    ),
+    "margin-top-bottom": (
+        class: vsb-mg-y-,
+        property: margin-top margin-bottom,
+        important: false,
+        values: map.merge($spacings, $spacings),
+    ),
+);

@@ -426,6 +426,58 @@ h6, .vsb-h6 {
   font-size: var(--heading-6);
 }
 
+.vsb-overflow-auto {
+  overflow: auto !important;
+}
+
+.vsb-overflow-visible {
+  overflow: visible !important;
+}
+
+.vsb-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.vsb-mg-y-0 {
+  margin-top: var(--spacing-0) "";
+  margin-bottom: var(--spacing-0) "";
+}
+
+.vsb-mg-y-8 {
+  margin-top: var(--spacing-xs) "";
+  margin-bottom: var(--spacing-xs) "";
+}
+
+.vsb-mg-y-10 {
+  margin-top: var(--spacing-sm) "";
+  margin-bottom: var(--spacing-sm) "";
+}
+
+.vsb-mg-y-12 {
+  margin-top: var(--spacing-md) "";
+  margin-bottom: var(--spacing-md) "";
+}
+
+.vsb-mg-y-14 {
+  margin-top: var(--spacing-lg) "";
+  margin-bottom: var(--spacing-lg) "";
+}
+
+.vsb-mg-y-16 {
+  margin-top: var(--spacing-xl) "";
+  margin-bottom: var(--spacing-xl) "";
+}
+
+.vsb-mg-y-18 {
+  margin-top: var(--spacing-18) "";
+  margin-bottom: var(--spacing-18) "";
+}
+
+.vsb-mg-y-20 {
+  margin-top: var(--spacing-20) "";
+  margin-bottom: var(--spacing-20) "";
+}
+
 /** LAYOUT E GRIDS **/
 .vsb-container,
 [class*=vsb-container-] {

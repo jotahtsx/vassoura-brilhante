@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "utility-api" as *;
+
+@each $block, $children in $vsb-utilities {
+    @each $subblock, $values in $children {
+        $base-class: map.get($children, class);
+        $suffix: map.get($children, suffix);
+        $property: map.get($children, property);
+        $responsive: if(map-has-key($children, responsive), map.get($children, responsive),
+        true);
+        $important: if(map-has-key($children, important), map.get($children, important),
+        true);
+
+        @if type-of($values) == map and $values != null and $base-class != null {
+            @each $child, $value in $values {
+                @if $value != null {
+
+                    @if $base-class == null {
+                        //Criando o seletor
+                        #{$child} {
+                            @if type-of($property) == list {
+                                @each $curr-property in $property {
+                                    #{$curr-property}: #{$value} if($important, !important, "");
+                                }
+                            }@else {
+                                #{$property}: #{$value} if($important, !important, "");
+                            }
+                        }
+                    } @else {
+                       //Selecionando as classes
+                       .#{$base-class}#{$child}#{$suffix} {
+
+
+                        @if type-of($property) == list {
+                            @each $curr-property in $property {
+                                #{$curr-property}: #{$value} if($important, !important, "");
+                            }
+                        }@else {
+                            #{$property}: #{$value} if($important, !important, "");
+                        }
+                       }
+                    }  
+                }
+            }
+        }
+    }
+}

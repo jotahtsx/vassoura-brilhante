@@ -2,9 +2,11 @@
 @use "../abstracts/mixins";
 
 //Base
+@forward "../base/utility-api";
 @forward "../base/normalize";
 @forward "../base/base";
 @forward "../base/typography";
+@forward "../base/utilities";
 
 //Layouts
 @forward "../layout/breakpoints";
