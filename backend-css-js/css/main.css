@@ -22090,4 +22090,43 @@ h6, .vsb-h6 {
   background-color: var(--bdg-danger-bg-clr);
   color: var(--bdg-danger-text-clr);
 }
+
+.vsb-avat {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.vsb-avat__img {
+  width: 100%;
+  height: 100%;
+}
+.vsb-avat.vsb-avat-30 {
+  width: 3rem;
+  height: 3rem;
+}
+.vsb-avat.vsb-avat-35 {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.vsb-avat.vsb-avat-40 {
+  width: 4rem;
+  height: 4rem;
+}
+.vsb-avat.vsb-avat-45 {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+.vsb-avat.vsb-avat-50 {
+  width: 5rem;
+  height: 5rem;
+}
+.vsb-avat-group {
+  display: flex;
+  align-items: center;
+}
+.vsb-avat-group .vsb-avat:not(:first-of-type) {
+  border: 0.2rem solid var(--global-bg-clr);
+  margin-left: -0.8rem;
+}
 /*# sourceMappingURL=main.css.map */
