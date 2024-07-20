@@ -2,6 +2,14 @@
 @use "variables" as *;
 @use "../layout/breakpoints" as *;
 
+@mixin boxShadow($x: 0, $y: 0, $blur: 0.15rem, $color: rgba(#000, 0.14)) {
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $delay: 0s, $easing-function: ease-out) {
+    transition: $property $duration $delay $easing-function;
+}
+
 @mixin customScrollbar($widh: 0.5rem, $height: 0.5rem, $bg-color: var(--vsb-gray-600-clr)) {
     //Firefox
     scrollbar-width: thin;

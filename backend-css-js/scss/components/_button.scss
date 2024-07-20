@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.vsb-btn {
+    border: 0;
+    border-radius: var(--default-brd-rad);
+    cursor: pointer;
+    padding: var(--default-btn-padding);
+    font-size: var(--btn-size);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include transition;
+
+    @each $current-style in $buttons {
+        @if $current-style ==default {
+            background-color: var(--btn-#{$current-style}-bg-clr);
+            color: var(--btn-#{$current-style}-text-clr);
+
+            &:hover {
+                background-color: var(--vsb-primary-600-clr);
+            }
+        }
+
+        @else {
+            &.vsb-btn-#{$current-style} {
+                background-color: var(--btn-#{$current-style}-bg-clr);
+                color: var(--btn-#{$current-style}-text-clr);
+
+                &:hover {
+                    background-color: var(--vsb-#{$current-style}-300-clr);
+                }
+            }
+        }
+    }
+
+    &.vsb-btn-sm, &.vsb-btn-sq {
+        padding: var(--default-btn-sm-padding);
+    }
+
+    &.vsb-btn-sq {
+        width: calc(2rem + var(--btn-size));
+    }
+
+    &.vsb-btn-link {
+        padding: 0;
+        text-decoration: underline;
+        background-color: transparent;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
