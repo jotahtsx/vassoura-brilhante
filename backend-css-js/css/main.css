@@ -22065,4 +22065,29 @@ h6, .vsb-h6 {
 .vsb-btn.vsb-btn-link:hover {
   background-color: transparent;
 }
+
+.vsb-bdg {
+  border: 0;
+  border-radius: var(--default-brd-rad);
+  padding: var(--default-bdg-padding);
+  font-size: var(--bdg-size);
+  text-align: center;
+  display: inline-block;
+}
+.vsb-bdg.vsb-bdg-secondary {
+  background-color: var(--bdg-secondary-bg-clr);
+  color: var(--bdg-secondary-text-clr);
+}
+.vsb-bdg.vsb-bdg-success {
+  background-color: var(--bdg-success-bg-clr);
+  color: var(--bdg-success-text-clr);
+}
+.vsb-bdg.vsb-bdg-warn {
+  background-color: var(--bdg-warn-bg-clr);
+  color: var(--bdg-warn-text-clr);
+}
+.vsb-bdg.vsb-bdg-danger {
+  background-color: var(--bdg-danger-bg-clr);
+  color: var(--bdg-danger-text-clr);
+}
 /*# sourceMappingURL=main.css.map */
