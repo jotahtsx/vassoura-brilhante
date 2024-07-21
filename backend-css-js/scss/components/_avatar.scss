@@ -22,6 +22,7 @@
     &-group {
         display: flex;
         align-items: center;
+
         .vsb-avat:not(:first-of-type) {
             border: 0.2rem solid var(--global-bg-clr);
             margin-left: -0.8rem;

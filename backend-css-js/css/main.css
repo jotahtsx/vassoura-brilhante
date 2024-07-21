@@ -22151,4 +22151,31 @@ h6, .vsb-h6 {
 .vsb-card__body {
   padding: 2rem;
 }
+
+.vsb-form {
+  width: 100%;
+}
+.vsb-form__group {
+  width: 100%;
+  position: relative;
+}
+.vsb-form__input {
+  --default-input-padding: 1rem 2rem 1rem 4rem;
+  background-color: var(--input-bg-clr);
+  border: 0.1rem solid transparent;
+  padding: var(--default-input-padding);
+  display: block;
+  width: 100%;
+  border-radius: var(--default-brd-rad);
+  transition: all 0.3s 0s ease-out;
+}
+.vsb-form__input:hover, .vsb-form__input:focus {
+  border-color: var(--input-brdr-clr);
+}
+.vsb-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
 /*# sourceMappingURL=main.css.map */
