@@ -22178,4 +22178,37 @@ h6, .vsb-h6 {
   left: 2rem;
   transform: translateY(-50%);
 }
+
+.vsb-tbl {
+  width: 100%;
+  overflow: hidden;
+  border-collapse: collapse;
+  border: 0.1rem solid var(--brdr-clr);
+}
+.vsb-tbl__header {
+  background-color: var(--tbl-header-bg-clr);
+}
+.vsb-tbl__head {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--heading-font-family);
+  font-size: 1.4rem;
+}
+.vsb-tbl__row:not(:last-of-type) {
+  border-bottom: 0.1rem solid var(--brdr-clr);
+}
+.vsb-tbl__head, .vsb-tbl__data {
+  padding: 1.6rem;
+  text-align: left;
+  white-space: nowrap;
+}
+.vsb-tbl__head a, .vsb-tbl__data a {
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--vsb-primary-600-clr);
+  font-weight: 600;
+  transition: all 0.3s 0s ease-out;
+}
+.vsb-tbl__head a:hover, .vsb-tbl__data a:hover {
+  color: var(--vsb-secondary-400-clr);
+}
 /*# sourceMappingURL=main.css.map */
