@@ -67,4 +67,3 @@ const operateNavigations = (type, target, variables) => {
   }
   
   dropdown()
-//# sourceMappingURL=app.js.map

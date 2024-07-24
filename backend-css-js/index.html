@@ -2,9 +2,9 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,12 @@
     rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
+  <!-- Main CSS-->
   <link rel="stylesheet" href="./css/main.css" />
-
-  <title>Vassoura Brilhante - Home</title>
+  <!-- Your page title-->
+  <title>Vassoura Brilhante - DEMO</title>
+  <!-- Place Custom Favicon here-->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -173,7 +175,7 @@
                   <th class="vsb-tbl__head">Nascimento</th>
                 </tr>
               </thead>
-    
+
               <tbody class="vsb-tbl__body">
                 <tr class="vsb-tbl__row">
                   <td class="vsb-tbl__data">
@@ -267,9 +269,29 @@
       </div>
     </div>
 
+    <div class="vsb-mg-y-20">
+      <div class="vsb-dropdown vsb-dropdown-abs-center vsb-d-in-block">
+        <div class="vsb-avat vsb-avat-30" data-dropdown-target="notifications">
+          <img src="images/user-f-1.jpg" alt="" class="vsb-avat__img">
+        </div>
+
+        <div class="vsb-dropdown__menu" id="notifications">
+          <div class="vsb-fs-16 vsb-fw-med vsb-pd-20">Novidades</div>
+        </div>
+      </div>
+      <div class="vsb-dropdown vsb-dropdown-abs-left vsb-d-in-block">
+        <div class="vsb-avat vsb-avat-40" data-dropdown-target="messages">
+          <img src="images/user-f-1.jpg" alt="" class="vsb-avat__img">
+        </div>
+
+        <div class="vsb-dropdown__menu" id="messages">
+          <div class="vsb-fs-16 vsb-fw-med vsb-pd-20">Mensagens</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script src=""></script>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>

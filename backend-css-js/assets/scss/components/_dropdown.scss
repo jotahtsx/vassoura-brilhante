@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../layout/breakpoints" as *;
+
+.vsb-dropdown {
+  position: relative;
+
+  [data-dropdown-target] {
+    cursor: pointer;
+  }
+
+  &__menu {
+    background-color: var(--card-bg-clr);
+    width: var(--default-dropdown-width);
+    height: auto;
+    max-height: var(--default-dropdown-mx-height);
+    overflow: hidden auto;
+    border-radius: var(--default-brd-rad);
+    position: absolute;
+    top: 120%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    @include transition;
+    @include boxShadow;
+    @include customScrollbar;
+
+    &.vsb-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &.vsb-dropdown-abs-left &__menu {
+    left: 0;
+    right: auto;
+  }
+
+  &.vsb-dropdown-abs-center &__menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.vsb-dropdown-abs-right &__menu {
+    left: auto;
+    right: 0;
+  }
+
+  @each $break, $value in $containers {
+    @include respond(#{$break}) {
+      &.vsb-dropdown-abs-left-#{$break} &__menu {
+        left: 0;
+        right: auto;
+        transform: translateX(0);
+      }
+
+      &.vsb-dropdown-abs-center-#{$break} &__menu {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.vsb-dropdown-abs-right-#{$break} &__menu {
+        left: auto;
+        right: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+}

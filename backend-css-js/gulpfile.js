@@ -3,15 +3,23 @@ const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 
 function buildStyles() {
-    return src('scss/main.scss')
+    return src('assets/scss/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('css'));
 }
 
-function watchTask() {
-    watch(['scss/**/*.scss'], buildStyles);
+function buildScripts() {
+    return src('assets/js/app.js')
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('js'));
 }
 
-exports.default = series(buildStyles, watchTask);
+function watchTask() {
+    watch(['assets/scss/**/*.scss'], buildStyles);
+    watch(['assets/js/**/*.js'], buildScripts);
+}
+
+exports.default = series(buildStyles, buildScripts, watchTask);
