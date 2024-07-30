@@ -26,8 +26,8 @@
   <header class="vsb-header vsb-header-fixed vsb-d-flex vsb-justify-between vsb-align-center">
     <div class="vsb-container">
       <div class="vsb-offset-12 vsb-offset-md-3 vsb-offset-lg-2">
-        <nav class="vsb-header__nav vsb-b-flex vsb-justify-between vsb-align-center">
-          <div class="vsb-header__left vsb-d-flex vsb-align-center vsb-mg-r-10 vsb-mg-r-0-md">
+        <nav class="vsb-header__nav vsb-d-flex vsb-justify-between vsb-align-center">
+          <div class="vsb-header__left vsb-d-flex align-center vsb-mg-r-10 vsb-mg-r-0-md">
             <div class="vsb-header__mobile vsb-mg-r-10 vsb-d-none-md">
               <button type="button" class="vsb-icon-btn vsb-header__mobile--trigger" data-menu-target="main-menu">
                 <i class="ri-menu-2-line vsb-fs-16"></i>
@@ -36,6 +36,28 @@
           </div>
           <ul class="vsb-header__navitems vsb-header__sidebar-md-3 vsb-header__sidebar-lg-2 vsb-pd-y-20" id="main-menu">
           </ul>
+          <div class="vsb-header__right vsb-d-flex vsb-align-center">
+            <div class="theme-control vsb-mg-r-10">
+              <button type="button" class="theme-switcher vsb-btn-icon" data-current-theme="light">
+                <i class="ri-moon-line theme-dark"></i>
+                <i class="ri-sun-line theme-light"></i>
+              </button>
+            </div>
+          </div>
+          <div class="vsb-dropdown vsb-dropdown-abs-right vsb-d-in-flex vsb-mg-r-10">
+            <button type="button" class="vsb-btn vsb-btn-secondary vsb-btn-sq" data-dropdown-theme="notifications">
+              <i class="ri-notification-line vsb-fs-16"></i>
+              <span class="vsb-bdg vsb-bdg-danger">4</span>
+            </button>
+
+            <div class="vsb-dropdown__menu" id="notifications">
+
+              <div class="dropdown-header vsb-pd-20">
+                <h6>Notificações</h6>
+              </div>
+
+            </div>
+          </div>
         </nav>
       </div>
     </div>
