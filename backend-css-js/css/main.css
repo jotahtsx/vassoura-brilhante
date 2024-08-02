@@ -101,6 +101,7 @@
   --btn-warn-text-clr: var(--vsb-warn-clr);
   --btn-danger-bg-clr: var(--vsb-danger-100-clr);
   --btn-danger-text-clr: var(--vsb-danger-clr);
+  --btn-icon-hvr-bg: var(--vsb-gray-clr);
   /* ************** TYPOGRAPHY ************** */
   --base-font-size: 62.5%;
   --heading-font-family: "Manrope", sans-serif;
@@ -374,7 +375,7 @@ body {
   width: 100%;
   min-height: 100%;
   background-color: var(--global-bg-clr);
-  color: var(--global-text-color);
+  color: var(--global-text-clr);
   font-weight: var(--font-weight-regular);
   line-height: var(--default-line-height);
   overflow-x: hidden;
@@ -390,6 +391,11 @@ img {
 
 a, i, span {
   display: inline-block;
+}
+
+a {
+  color: var(--global-text-clr);
+  transition: all 0.3s 0s ease-out;
 }
 
 h1, .vsb-h1,
@@ -22068,6 +22074,20 @@ h6, .vsb-h6 {
   background-color: transparent;
 }
 
+.vsb-btn-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  border-radius: 50%;
+  text-align: center;
+  font-size: var(--icon-size);
+  background-color: transparent;
+  transition: all 0.3s 0s ease-out;
+}
+.vsb-btn-icon:hover, .vsb-btn-icon:focus {
+  background-color: var(--btn-icon-hvr-bg);
+}
+
 .vsb-bdg {
   border: 0;
   border-radius: var(--default-brd-rad);
@@ -22300,6 +22320,13 @@ h6, .vsb-h6 {
   }
 }
 
+.dropdown-header, .dropdown-footer {
+  background-color: var(--tbl-header-bg-clr);
+}
+.dropdown-link:hover, .dropdown-link:focus {
+  color: var(--vsb-secondary-clr);
+}
+
 .vsb-tbl {
   width: 100%;
   overflow: hidden;
@@ -22349,5 +22376,53 @@ h6, .vsb-h6 {
   width: 3rem;
   height: 3rem;
   border-radius: var(--default-brd-rad);
+}
+.vsb-header .theme-control .theme-light,
+.vsb-header .theme-control .theme-dark {
+  display: none;
+}
+.vsb-header .theme-control [data-current-theme=light] .theme-light {
+  display: none;
+}
+.vsb-header .theme-control [data-current-theme=light] .theme-dark {
+  display: block;
+}
+.vsb-header .theme-control [data-current-theme=dark] .theme-dark {
+  display: none;
+}
+.vsb-header .theme-control [data-current-theme=dark] .theme-light {
+  display: block;
+}
+.vsb-header [data-dropdown-target=notifications] {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+.vsb-header [data-dropdown-target=notifications] .vsb-bdg {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  border-radius: 50%;
+  padding: 0;
+  top: -0.6rem;
+  right: -0.6rem;
+}
+.vsb-header [data-dropdown-target=notifications] .vsb-bdg.vsb-bdg-danger {
+  color: var(--card-bg-clr);
+}
+.vsb-header #notifications {
+  --default-dropdown-width: 25rem;
+}
+.vsb-header #notifications,
+.vsb-header #profile {
+  top: calc(var(--default-navbar-height) - 1rem);
+}
+.vsb-header #profile .user-details {
+  line-height: 1.2;
+}
+.vsb-header #profile .dropdown-footer {
+  background-color: transparent;
+  border-top: 0.1rem solid var(--brdr-clr);
 }
 /*# sourceMappingURL=main.css.map */

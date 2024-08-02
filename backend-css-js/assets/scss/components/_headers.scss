@@ -22,4 +22,74 @@
             border-radius: var(--default-brd-rad);
         }
     }
+
+    .theme-control {
+
+        .theme-light,
+        .theme-dark {
+            display: none;
+        }
+
+
+        [data-current-theme="light"] {
+            .theme-light {
+                display: none;
+            }
+
+            .theme-dark {
+                display: block;
+            }
+        }
+
+        [data-current-theme="dark"] {
+            .theme-dark {
+                display: none;
+            }
+
+            .theme-light {
+                display: block;
+            }
+        }
+    }
+
+    [data-dropdown-target=notifications] {
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+
+        .vsb-bdg {
+            position: absolute;
+            width: 1.6rem;
+            height: 1.6rem;
+            line-height: 1.6rem;
+            border-radius: 50%;
+            padding: 0;
+            top: -0.6rem;
+            right: -0.6rem;
+
+            &.vsb-bdg-danger {
+                color: var(--card-bg-clr);
+            }
+        }
+    }
+
+    #notifications {
+        --default-dropdown-width: 25rem;
+    }
+
+    #notifications,
+    #profile {
+        top: calc(var(--default-navbar-height) - 1rem);
+    }
+
+    #profile {
+        .user-details {
+            line-height: 1.2;
+        }
+
+        .dropdown-footer {
+            background-color: transparent;
+            border-top: 0.1rem solid var(--brdr-clr);
+        }
+    }
 }

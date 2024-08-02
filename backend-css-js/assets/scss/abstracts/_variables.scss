@@ -159,6 +159,7 @@ $vsb-colors: (
   --btn-warn-text-clr: var(--vsb-warn-clr);
   --btn-danger-bg-clr: var(--vsb-danger-100-clr);
   --btn-danger-text-clr: var(--vsb-danger-clr);
+  --btn-icon-hvr-bg: var(--vsb-gray-clr);
 
   /* ************** TYPOGRAPHY ************** */
   --base-font-size: 62.5%; // 10px (10 / 16) * 100 = 62.5
