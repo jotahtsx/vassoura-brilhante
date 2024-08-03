@@ -4,7 +4,7 @@
 html {
     box-sizing: border-box;
     height: 100%;
-    font-size: var(--base-font-size); 
+    font-size: var(--base-font-size);
 }
 
 body {
@@ -26,11 +26,13 @@ img {
     object-fit: cover;
 }
 
-a, i, span {
+a,
+i,
+span {
     display: inline-block;
 }
 
 a {
     color: var(--global-text-clr);
     @include transition;
-  }
+}

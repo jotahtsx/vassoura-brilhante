@@ -8,19 +8,25 @@ const dropdown = () => {
 
   const dropDown = [...document.querySelectorAll(`.${_variables.main}`)]
 
+  const closeDropdowns = () => {
+    dropDown.forEach(drop => {
+      const targetId = drop.querySelector(`[${_variables.target}]`).getAttribute(_variables.target)
+      const menu = document.querySelector(`#${targetId}`)
+      if (menu) menu.classList.remove(_variables.active)
+    })
+  }
+
   document.addEventListener("click", (vsb) => {
     const target = vsb.target.closest(`.${_variables.main}`)
     const targetedMenu = vsb.target.closest(`.${_variables.menu}`)
 
+    // Fecha todos os menus se clicar fora do dropdown e do menu
     if (!target && !targetedMenu) {
-      dropDown.forEach(drop => {
-        const targetId = drop.querySelector(`[${_variables.target}]`).getAttribute(_variables.target)
-        const menu = document.querySelector(`#${targetId}`)
-        if (menu) menu.classList.remove(_variables.active)
-      })
+      closeDropdowns()
       return
     }
 
+    // Se o clique foi no dropdown mas não no menu
     if (target && !targetedMenu) {
       const targetId = target.querySelector(`[${_variables.target}]`).getAttribute(_variables.target)
       const activeMenu = document.querySelector(`#${targetId}`)
@@ -38,8 +44,13 @@ const dropdown = () => {
       if (activeMenu) activeMenu.classList.toggle(_variables.active)
     }
   })
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDropdowns()
+    }
+  })
 }
 
 dropdown()
-
 //# sourceMappingURL=app.js.map

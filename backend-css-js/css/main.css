@@ -389,7 +389,9 @@ img {
   object-fit: cover;
 }
 
-a, i, span {
+a,
+i,
+span {
   display: inline-block;
 }
 
