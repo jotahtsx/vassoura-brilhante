@@ -20,13 +20,11 @@ const dropdown = () => {
     const target = vsb.target.closest(`.${_variables.main}`)
     const targetedMenu = vsb.target.closest(`.${_variables.menu}`)
 
-    // Fecha todos os menus se clicar fora do dropdown e do menu
     if (!target && !targetedMenu) {
       closeDropdowns()
       return
     }
 
-    // Se o clique foi no dropdown mas não no menu
     if (target && !targetedMenu) {
       const targetId = target.querySelector(`[${_variables.target}]`).getAttribute(_variables.target)
       const activeMenu = document.querySelector(`#${targetId}`)
